@@ -76,15 +76,17 @@ function App() {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <label>
+        <label class="form-control">
           Name:
           <input
             name="name"
+            type="text"
             value={form.name}
             placeholder="name"
             autoFocus
             maxLength={12}
             onChange={onChange}
+            class="form-control"
           />
         </label>
         {!!error.name && (
@@ -93,16 +95,18 @@ function App() {
           </div>
         )}
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Email:
           <input
             name="email"
+            type="email"
             value={form.email}
             placeholder="email"
             required
             onChange={onChange}
+            class="form-control"
           />
         </label>
         {!!error.email && (
@@ -111,16 +115,18 @@ function App() {
           </div>
         )}
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Password:
           <input
             name="password"
+            type="password"
             value={form.password}
             placeholder="password"
             required
             onChange={onChange}
+            class="form-control"
           />
         </label>
         {!!error.password && (
@@ -129,35 +135,42 @@ function App() {
           </div>
         )}
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Description:
           <textarea
             name="description"
+            type="text"
             value={form.description}
             placeholder="description"
             rows={10}
             cols={20}
             maxLength={500}
             onChange={onChange}
+            class="form-control"
           />
         </label>
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Country:
-          <select name="country" value={form.country} onChange={onChange}>
+          <select
+            name="country"
+            value={form.country}
+            onChange={onChange}
+            class="form-select"
+          >
             <option value="canada">Canada</option>
             <option value="u.s.a">U.S.A</option>
             <option value="ukraine">Ukraine</option>
           </select>
         </label>
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Gender:
           <div>
             <input
@@ -166,6 +179,7 @@ function App() {
               value="Male"
               checked={form.gender === "Male"}
               onChange={onChange}
+              class="form-check-input"
             />
             Male
             <input
@@ -174,6 +188,7 @@ function App() {
               value="Femail"
               checked={form.gender === "Femail"}
               onChange={onChange}
+              class="form-check-input"
             />
             Femail
             <input
@@ -182,25 +197,31 @@ function App() {
               value="Other"
               checked={form.gender === "Other"}
               onChange={onChange}
+              class="form-check-input"
             />
             Other
           </div>
         </label>
 
-        <hr />
+        <hr style={{ color: "darkcyan", height: "3px" }} />
 
-        <label>
+        <label class="form-control">
           Agree:
           <input
             type="checkbox"
             name="agree"
             value={form.agree}
             onChange={onChange}
+            class="form-check"
           />
         </label>
 
+        <hr style={{ color: "darkcyan", height: "3px" }} />
+
         <div>
-          <button>submit</button>
+          <button type="buton" class="btn btn-success">
+            submit
+          </button>
         </div>
       </form>
     </div>
